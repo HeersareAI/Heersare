@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --color-green: #2DB84D;
+  --color-mint: #D9F2DC;
+  --color-paper: #FAFAF7;
+  --color-stone: #EEEDE8;
+  --color-muted: #45453F;
+  --color-ink: #080808;
+  --font-sans: Arial, Helvetica, sans-serif;
+  --animate-float: float 7s ease-in-out infinite;
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-5deg); }
+    50% { transform: translateY(-14px) rotate(-3deg); }
+  }
+}
+
+@layer base {
+  html { @apply scroll-smooth; }
+  body { @apply bg-paper text-ink antialiased; }
+  ::selection { @apply bg-green text-ink; }
+  :focus-visible { @apply outline-2 outline-offset-4 outline-green; }
+  section[id] { @apply scroll-mt-24; }
+  button, a { -webkit-tap-highlight-color: transparent; }
+}
+
+@layer utilities {
+  .reveal { @apply opacity-100 translate-y-0 transition-[opacity,transform] duration-700; }
+  .reveal-pending { @apply opacity-0 translate-y-6; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; }
+    .reveal-pending { opacity: 1; transform: none; }
+  }
+}
