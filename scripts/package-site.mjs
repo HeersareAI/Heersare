@@ -8,6 +8,6 @@ const stage = path.join(root, "dist");
 const hosting = JSON.parse(await readFile(path.join(root, ".openai/hosting.json"), "utf8"));
 await mkdir(path.join(stage, ".openai"), { recursive: true });
 await cp(path.join(root, "out"), path.join(stage, "out"), { recursive: true });
-await writeFile(path.join(stage, ".openai/hosting.json"), JSON.stringify({ ...hosting, static: "out" }, null, 2));
+await writeFile(path.join(stage, ".openai/hosting.json"), JSON.stringify({ ...hosting, static: { directory: "out" } }, null, 2));
 execFileSync("tar", ["-czf", path.join(stage, "site.tar.gz"), "-C", stage, ".openai", "out"]);
 console.log("Packaged dist/site.tar.gz");
