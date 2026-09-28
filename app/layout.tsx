@@ -11,5 +11,10 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body>{children}</body></html>;
+  return <html lang="en" suppressHydrationWarning>
+    <head>
+      <script id="theme-init" dangerouslySetInnerHTML={{ __html: `(function(){var theme;try{theme=localStorage.getItem('heersare-theme')}catch(e){}var dark=theme==='dark'||(theme!=='light'&&window.matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.classList.toggle('dark',dark)})();` }} />
+    </head>
+    <body>{children}</body>
+  </html>;
 }

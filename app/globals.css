@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-green: #2DB84D;
   --color-mint: #D9F2DC;
@@ -7,6 +9,12 @@
   --color-stone: #EEEDE8;
   --color-muted: #45453F;
   --color-ink: #080808;
+  --color-canvas: #FAFAF7;
+  --color-surface: #FAFAF7;
+  --color-subtle: #EEEDE8;
+  --color-content: #080808;
+  --color-secondary: #45453F;
+  --color-tint: #D9F2DC;
   --font-sans: Arial, Helvetica, sans-serif;
   --animate-float: float 7s ease-in-out infinite;
   @keyframes float {
@@ -16,8 +24,17 @@
 }
 
 @layer base {
-  html { @apply scroll-smooth scroll-pt-32 sm:scroll-pt-36; }
-  body { @apply bg-paper text-ink antialiased; }
+  html { @apply scroll-smooth scroll-pt-32 sm:scroll-pt-36; color-scheme: light; }
+  html.dark {
+    --color-canvas: #080808;
+    --color-surface: color-mix(in srgb, #EEEDE8 5%, #080808);
+    --color-subtle: color-mix(in srgb, #D9F2DC 9%, #080808);
+    --color-content: #FAFAF7;
+    --color-secondary: color-mix(in srgb, #D9F2DC 75%, #080808);
+    --color-tint: color-mix(in srgb, #2DB84D 20%, #080808);
+    color-scheme: dark;
+  }
+  body { @apply bg-canvas text-content antialiased; }
   ::selection { @apply bg-green text-ink; }
   :focus-visible { @apply outline-2 outline-offset-4 outline-green; }
   button, a { -webkit-tap-highlight-color: transparent; }

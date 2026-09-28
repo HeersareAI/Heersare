@@ -13,7 +13,7 @@ export function SocialLinks() {
       rel="noopener noreferrer"
       aria-label={`${profile.name} (opens in a new tab)`}
       title={profile.name}
-      className="flex h-10 w-10 items-center justify-center rounded-full border border-paper/15 text-paper/75 transition-colors hover:border-green/60 hover:bg-green/10 hover:text-green"
+      className="flex h-9 w-9 items-center justify-center rounded-full border border-paper/15 text-paper/75 transition-colors hover:border-green/60 hover:bg-green/10 hover:text-green sm:h-10 sm:w-10"
     >
       <span aria-hidden="true" className={`h-[18px] w-[18px] bg-current [mask-size:contain] [mask-repeat:no-repeat] [mask-position:center] ${profile.icon}`} />
     </a>)}
