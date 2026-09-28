@@ -52,11 +52,11 @@ function ProjectPreview({ type }: { type: string }) {
 export default function Home() {
   return <>
     <a href="#main-content" className="fixed left-4 top-4 z-50 -translate-y-24 rounded-lg bg-green px-5 py-3 font-semibold text-ink focus:translate-y-0">Skip to content</a>
+    <Header />
     <main id="main-content">
     <div id="home" className="relative overflow-hidden rounded-b-[40px] bg-ink text-paper md:rounded-b-[72px]">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_78%_38%,#2DB84D14,transparent_48%)]" />
       <div aria-hidden="true" className="pointer-events-none absolute inset-y-0 right-0 w-1/2 bg-[linear-gradient(#D9F2DC04_1px,transparent_1px),linear-gradient(90deg,#D9F2DC04_1px,transparent_1px)] [background-size:48px_48px] [mask-image:linear-gradient(to_right,transparent,black)]" />
-      <Header />
         <section aria-labelledby="hero-title" className="relative mx-auto max-w-7xl px-6 pb-12 pt-14 lg:px-10 lg:pb-16 lg:pt-20">
           <div className="grid items-center gap-10 lg:grid-cols-[1.2fr_1fr] lg:gap-6">
             <div className="relative z-10">

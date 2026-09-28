@@ -16,11 +16,10 @@
 }
 
 @layer base {
-  html { @apply scroll-smooth; }
+  html { @apply scroll-smooth scroll-pt-32 sm:scroll-pt-36; }
   body { @apply bg-paper text-ink antialiased; }
   ::selection { @apply bg-green text-ink; }
   :focus-visible { @apply outline-2 outline-offset-4 outline-green; }
-  section[id] { @apply scroll-mt-24; }
   button, a { -webkit-tap-highlight-color: transparent; }
 }
 
