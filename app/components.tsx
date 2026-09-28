@@ -8,7 +8,7 @@ const links = ["Home", "Projects", "Stack", "Services", "Contact"];
 
 export function BrandLogo({ compact = false }: { compact?: boolean }) {
   return <a href="#home" aria-label="Heersare Designer home" className="block shrink-0 overflow-hidden rounded-lg transition-opacity hover:opacity-90">
-    <Image src="/heersare-logo.png" alt="Heersare — The Visionary Designer" width={1254} height={1254} loading={compact ? "lazy" : "eager"} className={compact ? "h-16 w-16 object-contain" : "h-20 w-20 object-contain sm:h-24 sm:w-24"} />
+    <Image src="/heersare-logo-transparent.png" alt="Heersare — The Visionary Designer" width={1254} height={1254} loading={compact ? "lazy" : "eager"} className={`object-contain invert hue-rotate-180 ${compact ? "h-16 w-16" : "h-20 w-20 sm:h-24 sm:w-24"}`} />
   </a>;
 }
 
