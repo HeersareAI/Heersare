@@ -6,3 +6,7 @@ dist/
 .env*
 !.env.example
 *.log
+.env
+.AGENTS.md
+.CLAUDE.md
+*.md
